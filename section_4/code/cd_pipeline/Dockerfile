@@ -17,8 +17,12 @@ EXPOSE 5000
 
 USER root
 
-RUN /usr/sbin/usermod/usermod -aG docker jenkins && \
-    /usr/sbin/usermod/usermod -aG root jenkins && \
+RUN echo $SHELL
+
+RUN ls /usr/sbin
+
+RUN /usr/sbin/usermod -aG docker jenkins && \
+    /usr/sbin/usermod -aG root jenkins && \
     /bin/chmod 644 /var/run/docker.sock
 
 USER jenkins
