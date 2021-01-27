@@ -25,7 +25,8 @@ RUN ls /usr/sbin
 #    /usr/sbin/usermod -aG root jenkins && \
 #    /bin/chmod 644 /var/run/docker.sock
 
-RUN /bin/chgrp docker jenkins && \
+RUN /usr/sbin/addgroup docker && \
+    /bin/chgrp docker jenkins && \
     /bin/chmod 777 /var/run/docker.sock
 
 USER jenkins
