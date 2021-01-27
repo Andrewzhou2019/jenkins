@@ -17,6 +17,7 @@ EXPOSE 5000
 
 USER root
 
+SHELL ["/bin/bash", "-c"]
 RUN echo $SHELL
 
 RUN ls /usr/sbin
