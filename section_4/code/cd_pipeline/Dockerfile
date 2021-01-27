@@ -21,13 +21,17 @@ USER root
 
 RUN ls /usr/sbin
 
+RUN echo "hello"
+
 #RUN /usr/sbin/usermod -aG docker jenkins && \
 #    /usr/sbin/usermod -aG root jenkins && \
 #    /bin/chmod 644 /var/run/docker.sock
 
-RUN /usr/sbin/addgroup docker && \
-    /bin/chgrp docker jenkins && \
-    /bin/chmod 777 /var/run/docker.sock
+RUN /usr/sbin/addgroup docker 
+
+RUN /bin/chgrp docker jenkins 
+
+RUN /bin/chmod 777 /var/run/docker.sock
 
 USER jenkins
 
