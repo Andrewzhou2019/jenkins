@@ -15,10 +15,9 @@ COPY templates/index.html /usr/src/app/templates/
 # Tell the port number the container should expose
 EXPOSE 5000
 
-USER root
+RUN ls /bin
 
-SHELL ["/bin/bash", "-c"]
-RUN echo $SHELL
+USER root
 
 RUN ls /usr/sbin
 
