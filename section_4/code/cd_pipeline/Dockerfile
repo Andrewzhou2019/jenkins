@@ -15,5 +15,13 @@ COPY templates/index.html /usr/src/app/templates/
 # Tell the port number the container should expose
 EXPOSE 5000
 
+USER root
+
+RUN usermod -aG docker jenkins && \
+    usermod -aG root jenkins && \
+    chmod 644 /var/run/docker.sock
+
+USER jenkins
+
 # Run the application
 CMD ["python3", "/usr/src/app/app.py"]
