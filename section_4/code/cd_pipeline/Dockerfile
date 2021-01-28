@@ -27,9 +27,9 @@ RUN echo "hello"
 #    /usr/sbin/usermod -aG root jenkins && \
 #    /bin/chmod 644 /var/run/docker.sock
 
-RUN /usr/sbin/addgroup docker 
+#RUN /usr/sbin/addgroup docker 
 
-RUN /bin/chgrp docker jenkins 
+#RUN /bin/chgrp docker jenkins 
 
 RUN /bin/chmod 777 /var/run/docker.sock
 
