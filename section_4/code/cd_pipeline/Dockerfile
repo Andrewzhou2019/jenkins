@@ -23,6 +23,11 @@ RUN ls /usr/sbin
 
 RUN echo "hello"
 
+# Download docker-cli and install it
+RUN curl -o docker-ce-cli.deb https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/docker-ce-cli_19.03.8~3-0~debian-stretch_amd64.deb && \
+    dpkg -i docker-ce-cli.deb && \
+    rm docker-ce-cli.deb
+    
 #RUN /usr/sbin/usermod -aG docker jenkins && \
 #    /usr/sbin/usermod -aG root jenkins && \
 #    /bin/chmod 644 /var/run/docker.sock
